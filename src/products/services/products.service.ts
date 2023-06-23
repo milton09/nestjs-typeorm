@@ -31,15 +31,11 @@ export class ProductsService {
 
   async findOne(id: number) {
 
-    return await this.productRepo.findOne(id);
-
-    /*
-    const product = this.products.find((item) => item.id === id);
+    const product = await this.productRepo.findOne(id);
     if (!product) {
       throw new NotFoundException(`Product #${id} not found`);
     }
     return product;
-    */
   }
 
   create(data: CreateProductDto) {
